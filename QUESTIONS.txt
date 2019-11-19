@@ -1,0 +1,17 @@
+
+Q1 - Propose a protocol / method to add authentication to your web service (Justify your choice).
+
+	Rather than using authentication I would use authorization and I would propose using some 
+version of OAuth ( Preferably OAuth 2.0).
+
+	OAuth offer multiple advantages, specially when building a microservices environment on which it is expected that the client will consume multipe of them to achieve a goal. In this kind of scenarios the main advantage of authentication with OAuth is the clear separation of resposabilities. There is an OAuth provider responsible of the user authentication and the rest
+of the APIs or services they just need to use the same OAuth provider to authorise the client.
+
+	As a final user, is also easier to log in one single time in one service (Authentication provider) rather than having to log into multiple different services with different credentials, avoiding the overhead of credentials and enforcing more user-friendly security policies. As a consumer I have seen authorisation multiple times. There are services that allow us to use them if we log in through other services. I.e. Evernote allows you to use their service if you log in into Gmail or LinkedIn. 
+
+
+Q2 - How can you make the service redundant? What considerations should you do?
+
+	Redundancy and high availability are big topics. To make the service redundant it has to be design and built to operate in a cluster. Regarding RESTful services one of the main concerns is the consistancy of the information when there are concurrent access. To solve this problem, in this example I have implemented an Optimitic Locking strategy. See in the DB the column VERSION and in the code the annotation @Version.
+
+

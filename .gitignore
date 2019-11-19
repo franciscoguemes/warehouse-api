@@ -1,0 +1,11 @@
+.classpath
+.project
+.settings/
+target/
+build/
+bin/
+*.class
+*.jar
+*.iml
+/.idea
+/backoffice-sealed-cloud/backoffice-dashboard/nbproject/
