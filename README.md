@@ -27,7 +27,7 @@ It is possible to change the product’s price, but this does not affect the tot
 	5. Build the project
 	6. Run the migration scripts
 2. Technical questions
-  
+3. API Documentation  
 
 ## Requirements
 
@@ -136,6 +136,16 @@ As a final user, is also easier to log in one single time in one service (Authen
 Redundancy and high availability are big topics. To make the service redundant it has to be design and built to operate in a cluster. Regarding RESTful services one of the main concerns is the consistancy of the information when there are concurrent access. To solve this problem, in this example I have implemented an Optimitic Locking strategy. See in the DB the column VERSION and in the code the annotation @Version.
 
 
+## API Documentation
 
+Since this is an example of API, to save time I have plugged the HAL Explorer (see the pom.xml file).
+
+	<!-- The HAL explorer allows you to test the API: http://localhost:8080/explorer/index.html#uri=/ -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-hal-explorer</artifactId>
+		</dependency>
+
+You can use this utility as documentation of the API and also for a quick test.
 
 
