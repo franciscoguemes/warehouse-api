@@ -25,13 +25,13 @@ public class OrderLine extends BaseEntity {
 //	public @Getter @Setter Product product;
 	
 	@Column
-	public @Getter @Setter Integer quantity;
+	private @Getter @Setter Integer quantity;
 	
 	@Column(name="PRODUCT_PRICE", nullable = true, precision = 50, scale = 30)
-	public @Getter @Setter BigDecimal productPrice;
+	private @Getter @Setter BigDecimal productPrice;
 	
 	@ManyToOne
 	@JoinColumn(name="ORDER_ID", nullable=false)
-	public @Getter @Setter Order order;
+	private @Getter @Setter Order order;
 	
 }
