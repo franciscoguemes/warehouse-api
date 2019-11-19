@@ -1,18 +1,18 @@
 Warehouse API
 =======
 
-This project is an example of a tiny REST / JSON web service in Java using Spring Boot (RestController) with an API 
+This project is an example of a tiny RESTful / JSON web service in Java using Spring Boot (RestController) with an API 
 that supports basic CRUD operations:
-	* Create a new product
-	* Get a list of all products
-	* Update a product
+- [x] Create a new product
+- [x] Get a list of all products
+- [x] Update a product
 
 The API also support:
-	* Placing an order
-	* Retrieving all orders within a given time period
+- [x] Placing an order
+- [ ] Retrieving all orders within a given time period
 
 A product have a name and some representation of its price.
-Each order is recorded and have a list of products. It also have the buyer’s e-mail, and the time the order was placed. The total value of the order are always be calculated, based on the prices of the products in it.
+Each order is recorded and have a list of products. It also have the buyer’s e-mail, and the time the order was placed. The total value of the order is always be calculated (never persisted), based on the prices and the quantity of the products in it.
 It is possible to change the product’s price, but this does not affect the total value of orders which have already been placed.
 
 
