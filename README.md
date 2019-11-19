@@ -91,7 +91,7 @@ This step is only needed if you skipped the creation of the Docker Container and
 
 	CREATE SCHEMA `warehouseSchema` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ;
 
-For creating the users you can have a look here: https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
+For creating the users you can have a look [here](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql)
 
 
 ### Build the project
