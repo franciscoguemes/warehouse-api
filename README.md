@@ -32,11 +32,11 @@ It is possible to change the product’s price, but this does not affect the tot
 ## Requirements
 
 The application has been coded/build using the following software:
-	1- Oracle JDK version: 1.8
-	2- Apache Maven 3.5.4
-	3- Flyway Community Edition 5.2.4 
-	4- Docker 18.09.1
-		4.1- MySQL 8.0.18   
+1. Oracle JDK version: 1.8
+2. Apache Maven 3.5.4
+3. Flyway Community Edition 5.2.4 
+4. Docker 18.09.1
+	1. MySQL 8.0.18   
 	
 In order run successfully the application you will need to have installed in your computer all the software mentioned
 above (with same version number or superior) from 1 to 4. For the database you will find instructions here on how to
