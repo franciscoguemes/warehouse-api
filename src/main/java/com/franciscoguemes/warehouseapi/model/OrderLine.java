@@ -20,9 +20,9 @@ public class OrderLine extends BaseEntity {
 
 	private static final long serialVersionUID = 7197517057894568567L;
 
-//	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE }) 
-//	@MapsId
-//	public @Getter @Setter Product product;
+	@ManyToOne
+	@JoinColumn(name="PRODUCT_ID", nullable=false)
+	public @Getter @Setter Product product;
 	
 	@Column
 	private @Getter @Setter Integer quantity;
