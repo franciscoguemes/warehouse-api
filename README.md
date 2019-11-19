@@ -20,12 +20,12 @@ It is possible to change the product’s price, but this does not affect the tot
 
 0. Requirements
 1. Installation
-	1.1. Create the docker image
-	1.2. Instantiate a docker container
-	1.3. Run the docker container
-	1.4. Create the warehouseSchema
-	1.5. Build the project
-	1.6. Run the migration scripts
+	1. Create the docker image
+	2. Instantiate a docker container
+	3. Run the docker container
+	4. Create the warehouseSchema
+	5. Build the project
+	6. Run the migration scripts
 2. Technical questions
   
 
