@@ -1,6 +1,7 @@
 package com.franciscoguemes.warehouseapi.model;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Date;
 import java.util.Set;
 
@@ -37,7 +38,9 @@ public class Order extends BaseEntity{
 	public BigDecimal getTotal() {
 		BigDecimal total = BigDecimal.ZERO;
 		for(OrderLine line : lines) {
-			line.getProductPrice();
+			if(line.getQuantity()==null || line.getProductPrice()==null)
+				continue;
+			total = total.add(line.getProductPrice().multiply(BigDecimal.valueOf(line.getQuantity())));
 		}
 		return total;
 	}
