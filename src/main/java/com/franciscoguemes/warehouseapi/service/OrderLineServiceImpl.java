@@ -1,7 +1,9 @@
 package com.franciscoguemes.warehouseapi.service;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -57,36 +59,41 @@ public class OrderLineServiceImpl implements OrderLineService{
 	}
 	
 	@Override
-	public Optional<OrderLine> findOrderLineById(Long id) {
-		return orderLineRepository.findById(id);
+	public List<OrderLineDto> findAllOrderLines() {
+		return orderLineRepository.findAll().stream().map( orderLine -> model2Dto(orderLine) ).collect(Collectors.toList());
 	}
-
+	
 	@Override
-	public List<OrderLine> findAllOrderLines() {
-		return orderLineRepository.findAll();
-	}
-
-	@Override
-	public OrderLine saveOrderLine(OrderLine orderLine) {
-		return orderLineRepository.save(orderLine);
-	}
-
-	@Override
-	public void deleteOrderLine(Long id) {
-		this.orderLineRepository.deleteById(id);
-	}
-
-	@Override
-	public OrderLine modifyOrderLine(OrderLine oldOrderLine, OrderLine newOrderLine) {
+	public Optional<OrderLineDto> findOrderLineById(Long id) {
+		Optional<OrderLine> optional = orderLineRepository.findById(id);
 		
-		if(newOrderLine.getQuantity()!=null) {
-			oldOrderLine.setQuantity(newOrderLine.getQuantity());
+		if(optional.isPresent()) {
+			return Optional.of(this.model2Dto(optional.get()));
 		}
-		
-		//TODO: Do this for the productId ????
-		// The productPrice must not be modifiable (is read only) ...
-		
-		return this.orderLineRepository.save(oldOrderLine);
+		return Optional.empty();
 	}
+
+//	@Override
+//	public OrderLine saveOrderLine(OrderLine orderLine) {
+//		return orderLineRepository.save(orderLine);
+//	}
+//
+//	@Override
+//	public void deleteOrderLine(Long id) {
+//		this.orderLineRepository.deleteById(id);
+//	}
+//
+//	@Override
+//	public OrderLine modifyOrderLine(OrderLine oldOrderLine, OrderLine newOrderLine) {
+//		
+//		if(newOrderLine.getQuantity()!=null) {
+//			oldOrderLine.setQuantity(newOrderLine.getQuantity());
+//		}
+//		
+//		//TODO: Do this for the productId ????
+//		// The productPrice must not be modifiable (is read only) ...
+//		
+//		return this.orderLineRepository.save(oldOrderLine);
+//	}
 
 }

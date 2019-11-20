@@ -15,15 +15,15 @@ public interface OrderLineService {
 	
 	OrderLine dto2Model(OrderLineDto orderLineDto) throws OrderLineException;
 	
-	Optional<OrderLine> findOrderLineById(Long id);
-	
-	List<OrderLine> findAllOrderLines();
+	List<OrderLineDto> findAllOrderLines();
 
-	OrderLine saveOrderLine(OrderLine orderLine);
-	
-	void deleteOrderLine(Long id);
-
-	OrderLine modifyOrderLine(OrderLine oldOrderLine, OrderLine newOrderLine);
+	Optional<OrderLineDto> findOrderLineById(Long id);
+//	
+//	OrderLine saveOrderLine(OrderLine orderLine);
+//	
+//	void deleteOrderLine(Long id);
+//
+//	OrderLine modifyOrderLine(OrderLine oldOrderLine, OrderLine newOrderLine);
 
 	
 
