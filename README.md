@@ -9,6 +9,8 @@ that supports basic CRUD operations:
 
 The API also support:
 - [x] Placing an order
+- [x] Delete an order
+- [x] Get a list of all orders
 - [ ] Retrieving all orders within a given time period
 
 A product have a name and some representation of its price.
