@@ -16,6 +16,7 @@ import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,7 +27,7 @@ public class Order extends BaseEntity{
 	private static final long serialVersionUID = 1388758958415154932L;
 
 	@OneToMany(mappedBy = "order", cascade = {CascadeType.ALL}) 
-    private @Getter Set<OrderLine> lines;
+    private @Getter @Setter Set<OrderLine> lines;
 	
 	@Column(name="BUYER_EMAIL", nullable = true, length=255)
 	private @Getter @Setter String buyerEmail;

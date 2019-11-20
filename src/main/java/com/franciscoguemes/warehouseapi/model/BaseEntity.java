@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.ToString;
 
 
@@ -31,6 +33,7 @@ public class BaseEntity implements Serializable{
 		this.id = id;
 	}
 
+	@JsonIgnore
 	@Version
 	protected Integer version;
 
