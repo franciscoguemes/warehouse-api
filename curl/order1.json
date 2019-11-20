@@ -1,0 +1,18 @@
+{
+	"buyerEmail": "jfk@famouspeople.com",
+	"lines": [
+		{
+			"quantity": 2,
+			"productPrice": 3,
+			"productId": 2
+		},
+		{
+			"quantity": 3,
+			"productId": 4
+		},
+		{
+			"quantity": 3,
+			"productId": 14
+		}
+	]
+}
